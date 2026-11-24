@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1d1e1c" />
+    <meta name="description" content="ЧЕРТА — барбершоп в центре Кишинёва. Стрижки, оформление бороды и время для себя." />
+    <title>ЧЕРТА — барбершоп</title>
+    <script>
+      try {
+        if (new URLSearchParams(location.search).get("theme") === "blend") {
+          document.documentElement.classList.add("theme-entering");
+          addEventListener("DOMContentLoaded", () => {
+            requestAnimationFrame(() => document.documentElement.classList.remove("theme-entering"));
+            try { history.replaceState(null, "", location.pathname + location.hash); } catch {}
+          }, { once: true });
+        }
+      } catch {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="men">
+    <header class="site-header">
+      <div class="header-inner page-width">
+        <a class="brand" href="#top" aria-label="ЧЕРТА — наверх">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M13 8v28M31 8v28M13 15h18M13 29h18M18 15l8 14m0-14-8 14"/><circle cx="13" cy="8" r="3"/><circle cx="31" cy="8" r="3"/><circle cx="13" cy="36" r="3"/><circle cx="31" cy="36" r="3"/></svg></span>
+          <span class="brand-word">ЧЕРТА<span>BARBER STUDIO</span></span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+        <nav class="main-nav" id="main-nav" aria-label="Главная навигация">
+          <a href="#services">Услуги</a><a href="women.html" data-page-transition>Женские услуги</a><a href="#team">Команда</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+        </nav>
+        <a class="header-phone" href="tel:+37360000000">+373 60 000 000</a>
+        <button class="button button-dark header-book" type="button" data-book>Записаться <span>↗</span></button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero page-width">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span></span> Кишинёв · барбершоп</p>
+          <h1>Хорошая стрижка —<br />это <em>точка опоры.</em></h1>
+          <p class="hero-description">Место, где приводят мысли в порядок вместе с волосами. Точная работа, спокойная атмосфера и кофе без спешки.</p>
+          <div class="hero-actions"><button class="button button-accent" type="button" data-book>Выбрать время <span>↗</span></button><a class="text-link" href="#services">Смотреть услуги <span>↓</span></a></div>
+          <div class="hero-note"><span class="status-dot"></span><span>Сегодня открыты до 21:00</span><span class="note-divider"></span><span>Без суеты. По записи.</span></div>
+        </div>
+        <div class="hero-visual" data-reveal>
+          <div class="hero-photo-wrap"><img class="hero-photo" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85" alt="Рабочее место барбера в студии" /></div>
+          <div class="hero-stamp" aria-hidden="true"><span>ЧИСТАЯ<br />РАБОТА</span><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46"/><path d="M50 4v92M4 50h92M17.5 17.5l65 65m0-65-65 65"/></svg></div>
+          <span class="photo-caption">01 / СТУДИЯ НА МАТЕЕВИЧА</span>
+        </div>
+        <a class="scroll-cue" href="#services" aria-label="Прокрутить к услугам"><span>ЛИСТАЙТЕ НИЖЕ</span><i>↓</i></a>
+      </section>
+
+      <section class="ticker" aria-label="Наш подход"><div class="ticker-track" aria-hidden="true"><div class="ticker-group"><span>ТОЧНОСТЬ</span><i>✳</i><span>ХАРАКТЕР</span><i>✳</i><span>СВОЁ ВРЕМЯ</span><i>✳</i><span>ТОЧНОСТЬ</span><i>✳</i><span>ХАРАКТЕР</span><i>✳</i><span>СВОЁ ВРЕМЯ</span><i>✳</i></div><div class="ticker-group"><span>ТОЧНОСТЬ</span><i>✳</i><span>ХАРАКТЕР</span><i>✳</i><span>СВОЁ ВРЕМЯ</span><i>✳</i><span>ТОЧНОСТЬ</span><i>✳</i><span>ХАРАКТЕР</span><i>✳</i><span>СВОЁ ВРЕМЯ</span><i>✳</i></div></div></section>
+
+      <section class="services section-pad page-width" id="services">
+        <div class="section-top" data-reveal><div><p class="eyebrow">01 — УСЛУГИ</p><h2>Ничего лишнего.<br /><em>Только своё.</em></h2></div><p class="section-intro">Подберём форму под ваши привычки, тип волос и настроение. Без шаблонов и спешки.</p></div>
+        <div class="service-list" id="service-list"></div>
+        <div class="services-foot"><span>Все цены указаны в MDL</span><button class="text-link" type="button" data-book>Записаться на услугу <span>↗</span></button></div>
+      </section>
+
+      <section class="manifesto">
+        <div class="manifesto-inner page-width" data-reveal><p class="eyebrow">ХОРОШИЙ ДЕНЬ НАЧИНАЕТСЯ С ТЕБЯ</p><h2>Не меняем тебя.<br /><em>Подчёркиваем.</em></h2><p>Мы верим в детали: чистую линию, правильную длину и ощущение, когда всё на своём месте.</p><a href="#team" class="button button-light">Познакомиться с командой <span>↓</span></a></div>
+        <span class="manifesto-symbol" aria-hidden="true">Ч</span>
+      </section>
+
+      <section class="team section-pad page-width" id="team">
+        <div class="section-top" data-reveal><div><p class="eyebrow">02 — КОМАНДА</p><h2>Люди, которым<br /><em>можно довериться.</em></h2></div><p class="section-intro">Каждый мастер — свой взгляд и рука. Вместе находим то, что подходит именно вам.</p></div>
+        <div class="team-grid" id="team-grid"></div>
+      </section>
+
+      <section class="reviews section-pad" id="reviews">
+        <div class="reviews-inner page-width">
+          <div class="section-top" data-reveal><div><p class="eyebrow">03 — СЛОВА ГОСТЕЙ</p><h2>Когда всё<br /><em>на своём месте.</em></h2></div><div class="review-rating"><span>★★★★★</span><b>4.9 / 5</b><small>настроение после визита</small></div></div>
+          <div class="review-grid" id="review-grid"></div>
+        </div>
+      </section>
+
+      <section class="booking-banner page-width" data-reveal>
+        <div><p class="eyebrow">ВАШЕ ВРЕМЯ — ВАШЕ</p><h2>Хороший план<br />на ближайший час.</h2><p>Выберите мастера и удобное время — остальное мы сделаем.</p></div>
+        <button class="button button-accent" type="button" data-book>Записаться <span>↗</span></button>
+        <span class="booking-mark" aria-hidden="true">/</span>
+      </section>
+
+      <section class="contacts section-pad page-width" id="contacts">
+        <div class="contact-copy" data-reveal><p class="eyebrow">04 — МЫ ЗДЕСЬ</p><h2>Загляните<br /><em>на чашку кофе.</em></h2><div class="contact-detail"><span>АДРЕС</span><strong>Кишинёв, ул. Матвеевича, 47</strong><small>Центр · вход со стороны тихого двора</small></div><div class="contact-detail"><span>ЧАСЫ</span><strong>Ежедневно · 10:00–21:00</strong><small>Последняя запись — за час до закрытия</small></div><div class="contact-actions"><a class="button button-dark" href="tel:+37360000000">+373 60 000 000 <span>↗</span></a><a class="text-link" href="https://maps.google.com/?q=Chisinau+strada+Alexei+Mateevici+47" target="_blank" rel="noreferrer">Открыть карту <span>↗</span></a></div></div>
+        <a class="map-card" href="https://maps.google.com/?q=Chisinau+strada+Alexei+Mateevici+47" target="_blank" rel="noreferrer" aria-label="Открыть расположение на карте"><div class="map-grid" aria-hidden="true"><span class="street street-a"></span><span class="street street-b"></span><span class="street street-c"></span><span class="street street-d"></span><span class="street street-e"></span><span class="map-block block-a"></span><span class="map-block block-b"></span><span class="map-block block-c"></span><span class="map-block block-d"></span><span class="map-pin"><i></i></span></div><span class="map-label"><b>ЧЕРТА</b><small>ул. Матეевича, 47 · Кишинёв</small></span><span class="map-open">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-main page-width"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M13 8v28M31 8v28M13 15h18M13 29h18M18 15l8 14m0-14-8 14"/><circle cx="13" cy="8" r="3"/><circle cx="31" cy="8" r="3"/><circle cx="13" cy="36" r="3"/><circle cx="31" cy="36" r="3"/></svg></span><span class="brand-word">ЧЕРТА<span>BARBER STUDIO</span></span></a><span>Меньше шума. Больше тебя.</span><a href="tel:+37360000000">+373 60 000 000</a><a href="#top" class="back-top">НАВЕРХ ↑</a></div><div class="footer-bottom page-width"><span>© ЧЕРТА · Концепт барбершопа</span><span>Команда, отзывы, контакты и цены вымышлены для макета.</span></div></footer>
+
+    <div class="modal-backdrop" id="booking-backdrop" hidden>
+      <section class="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+        <div class="modal-top"><div><p class="eyebrow">ЧЕРТА BARBER STUDIO</p><h2 id="booking-title">Записаться</h2></div><button class="modal-close" id="booking-close" type="button" aria-label="Закрыть">×</button></div>
+        <form id="booking-form">
+          <label>Услуга<select name="service" required><option value="">Выберите услугу</option><option>Мужская стрижка — 350 MDL</option><option>Стрижка машинкой — 250 MDL</option><option>Оформление бороды — 250 MDL</option><option>Стрижка + борода — 550 MDL</option><option>Отец и сын — 600 MDL</option></select></label>
+          <label>Мастер<select name="barber" required><option value="">Выберите мастера</option><option>Андрей  Волков</option><option>Марк  Савин</option><option>Илья  Раду</option></select></label>
+          <div class="form-row"><label>Дата<input type="date" name="date" id="booking-date" required /></label><label>Время<select name="time" required><option value="">Время</option><option>10:00</option><option>11:30</option><option>13:00</option><option>14:30</option><option>16:00</option><option>17:30</option><option>19:00</option></select></label></div>
+          <label>Ваше имя<input type="text" name="name" placeholder="Как к вам обращаться?" autocomplete="name" required /></label>
+          <label>Телефон<input type="tel" name="phone" placeholder="+373" autocomplete="tel" required /></label>
+          <button class="button button-accent submit-booking" type="submit">Проверить запись <span>↗</span></button>
+          <p class="form-caption">Демо-форма: данные останутся в этом браузере и никуда не отправятся.</p>
+        </form>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="theme-transition" aria-hidden="true"></div>
+    <script src="assets/vendor/anime.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
